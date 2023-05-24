@@ -3,5 +3,5 @@ def checkSize(input, width, height):
     exit()
 
 def checkBool(input):
-  if input not in ['y, Y, n, N']:
+  if input not in ['y', 'Y', 'n', 'N']:
     exit()

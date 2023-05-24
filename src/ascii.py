@@ -1,5 +1,5 @@
 def ascii(reverse):
-  chars = "$$$$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1[]?-_+~<>i!lI;:,\"^`\'.        "
+  chars = "$$$$$@@@@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1[]?-+~<>i!lI;:,\"^`\'.     "
   if reverse:
     return chars[::-1]
   return chars

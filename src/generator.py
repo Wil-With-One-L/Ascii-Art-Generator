@@ -11,14 +11,17 @@ def getPixelsInSection(image, section_x, section_y, section_size):
       pixels.append(image[y, x])
   return pixels
 
-image = cv2.imread('Images/link.jpeg')
+# ========================
 
-output = open('Output/output.txt', 'w')
+image = cv2.imread('Images/mona_lisa.jpeg')
+
+gap_output = open('Output/gap_output.txt', 'w')
+double_output = open('Output/double_output.txt', 'w')
 
 img_height = image.shape[0]
 img_width = image.shape[1]
 
-# -----------------
+# ========================
 
 section_size = int(input(f'resolution (number of pixels/character): '))
 rev = input('photonegative? [Y] / [N]: ')
@@ -35,9 +38,12 @@ x_sections = img_width // section_size
 y_sections = img_height // section_size
 
 for y in range(0, y_sections):
-  line = ''
+  gap_line = ''
+  double_line = ''
   for x in range(0, x_sections):
     pixels = getPixelsInSection(image, x, y, section_size)
-    line += ascii.getAscii(pixels, rev)
-    line += ' '
-  output.write(line + '\n')
+    char = ascii.getAscii(pixels, rev)
+    double_line += char + char
+    gap_line += char + ' '
+  double_output.write(double_line + '\n')
+  gap_output.write(gap_line + '\n')
